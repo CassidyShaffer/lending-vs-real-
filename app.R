@@ -95,6 +95,7 @@ server <- function(input, output){
   data.three2 <- matrix(cbind(as.numeric(angola), as.numeric(argentina), as.numeric(armenia)), nrow = length(angola), ncol = 3)
   scatterplot3js(x = data.three2, color = rainbow(length(data.three2[,2])), label.margin = TRUE, flip.y = TRUE)
  
+  
   })
 
 shinyApp(ui = ui, server = server)
