@@ -19,6 +19,7 @@ server <- function(input, output){
   output$datatable1 <- DT::renderDataTable({ 
    
     lending <- read.csv("E:/college/aFALL 2016/RStudio project/lending.csv", header = TRUE, stringsAsFactors = FALSE)
+    
     ## column names
     # names(data1) <- c("Primary ID", "Binary Flag", "Planetary Mass", "Radius", "Period", "Axis", "Eccentricity", "Periastron", "Longitude" ,"Ascending Node", "Inclination", "Temp", "Age", "Discovery Method" ,"Discovery Year", "Last Updated", "Right Ascension", "Declination", "Distance from Sun (parsec)", "Host Start Mass", "Host Star Radius", "HS Metallicity", "HS temp" ,"HS age")
     
@@ -56,7 +57,7 @@ server <- function(input, output){
    
   })
   
-  output$Real <- threejs::renderScatterplotThree({
+  output$plot1 <- threejs::renderScatterplotThree({
     
     # names(data1) <- c("Primary ID", "Binary Flag", "Planetary Mass", "Radius", "Period", "Axis", "Eccentricity", "Periastron", "Longitude" ,"Ascending Node", "Inclination", "Temp", "Age", "Discovery Method" ,"Discovery Year", "Last Updated", "Right Ascension", "Declination", "Distance from Sun (parsec)", "Host Start Mass", "Host Star Radius", "HS Metallicity", "HS temp" ,"HS age")
     
@@ -76,8 +77,8 @@ server <- function(input, output){
     
   })
 
- 
-  ouput$Lending<- threejs::renderScatterplotThree({
+  
+  output$plot2 <- threejs::renderScatterplotThree({
     
     # names(data1) <- c("Primary ID", "Binary Flag", "Planetary Mass", "Radius", "Period", "Axis", "Eccentricity", "Periastron", "Longitude" ,"Ascending Node", "Inclination", "Temp", "Age", "Discovery Method" ,"Discovery Year", "Last Updated", "Right Ascension", "Declination", "Distance from Sun (parsec)", "Host Start Mass", "Host Star Radius", "HS Metallicity", "HS temp" ,"HS age")
     
@@ -97,5 +98,5 @@ server <- function(input, output){
  
   
   })
-
+}
 shinyApp(ui = ui, server = server)
